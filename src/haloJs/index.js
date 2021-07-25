@@ -1,9 +1,24 @@
 function createElement(type, props, ...children) {
+    console.log(props, '===createElement');
+    delete props.__source;
+
     return {
         type,
         props: {
             ...props,
-            children
+            children: children.map((child) => {
+                return typeof child === 'object' ? child : createTextElement(child)
+            })
+        }
+    }
+}
+
+function createTextElement(text) {
+    return {
+        type: 'TEXT',
+        props: {
+            nodeValue: text,
+            children: []
         }
     }
 }
