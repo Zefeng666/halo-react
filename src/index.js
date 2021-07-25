@@ -9,8 +9,7 @@ let element = <div>
   <p> 手写react </p>
   <a href="http://www.baidu.com">跳转</a>
 </div>
-console.log(ReactDOM, '---------');
-console.log(document.createElement, '=======');
+
 ReactDOM.render(element, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
